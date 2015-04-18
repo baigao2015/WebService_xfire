@@ -1,0 +1,2 @@
+# WebService_xfire
+WebService接口的xfire应用示例
