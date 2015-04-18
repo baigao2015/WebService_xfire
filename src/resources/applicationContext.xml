@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 该import可以放在web.xml中引入，也可以放在当前位置，未了尽量不耦合其他spring注入，最好放在web.xml中
+    <import resource="classpath:org/codehaus/xfire/spring/xfire.xml" />
+     -->
+	<bean id="calculatorServiceBean" class="cn.com.webservice.server.CalculatorImpl" />
+</beans>

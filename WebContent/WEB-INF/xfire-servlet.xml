@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- START SNIPPET: xfire -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="urlMap">
+			<map>
+				<entry key="/Calculator.ws">
+					<ref bean="calculator" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+	<!--
+		Declare a parent bean with all properties common to both services
+	-->
+	<bean id="calculator" class="org.codehaus.xfire.spring.remoting.XFireExporter">
+		<property name="serviceFactory">
+			<ref bean="xfire.serviceFactory" />
+		</property>
+		<property name="xfire">
+			<ref bean="xfire" />
+		</property>
+		<property name="serviceBean">
+			<ref bean="calculatorServiceBean" />
+		</property>
+		<property name="serviceClass">
+			<value>cn.com.webservice.server.Calculator</value>
+		</property>
+	</bean>
+	<!-- END SNIPPET: xfire -->
+</beans>
